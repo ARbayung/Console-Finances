@@ -89,17 +89,25 @@ var finances = [
 
 let total = 0;
 let length = finances.length;
-let change = 0;
+let changeI = 0;
+let changeD = 0;
 let average;
-let net = 0;
-let netChangeSum = 0;
-let netArray = []
+let topIncrease = 0;
+let topDecrease = 0;
 
 for(let i = 0; i < finances.length; i++){
     total += finances[i][1]
+
+    if (changeI < finances[i][1]){
+        changeI = finances[i][1]
+     topIncrease = (finances[i])
+    } 
+
+    if (changeD > finances[i][1]){
+        changeD = finances[i][1]
+     topDecrease = (finances[i])
+    } 
 }
 
-console.log("the total number of months is " + length)
-console.log("the sum of the array is " + total);
-
-console.log("FINANCIAL")
+average = Math.round(total/length);
+console.log("financial Analysis\n---------------------------\nTotal Months: "+length+"\nTotal: £"+total+"\nAverage Change: £"+average+"\nGreatest Increase in Profits: \n"+topIncrease.join(' £')+"\nGreatest Decrease in Profits: \n"+topDecrease.join(' £'))
