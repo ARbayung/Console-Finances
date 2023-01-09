@@ -86,3 +86,20 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
+
+let total = 0;
+let length = finances.length;
+let change = 0;
+let average;
+let net = 0;
+let netChangeSum = 0;
+let netArray = []
+
+for(let i = 0; i < finances.length; i++){
+    total += finances[i][1]
+}
+
+console.log("the total number of months is " + length)
+console.log("the sum of the array is " + total);
+
+console.log("FINANCIAL")
